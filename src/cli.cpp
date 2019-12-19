@@ -5,10 +5,15 @@
 #include<stdio.h>
 #include<errno.h>
 #include<sys/types.h>
-#include<arpa/inet.h>
-#include<netinet/in.h>
 
+#include<arpa/inet.h>
+//IPPROTO_TCPºê¶¨Òå
+#include<netinet/in.h>
+//closeº¯Êý
+
+#include<unistd.h>
 using namespace std;
+
 /*
 #PRINT(arg,...) printf("[%s:%d]:[%s] %s\n", __FILE__, __LINE__, __func___)
 */
