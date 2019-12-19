@@ -18,7 +18,7 @@ using namespace std;
 #PRINT(arg,...) printf("[%s:%d]:[%s] %s\n", __FILE__, __LINE__, __func___)
 */
 
-#define PRINT(fmt,...) printf(fmt,__VA_ARGS__)
+#define PRINT(fmt,...) printf(fmt,##__VA_ARGS__)
 
 int main()
 {
@@ -70,7 +70,7 @@ int main()
 	PRINT("connect server success..\n");
 	char msg[128]="adflkasodgnaosdfkkk";
 	
-	if(send(sockfd, msg, strlen(msg)) <0 )
+	if(write(sockfd, msg, strlen(msg)) <0 )
 	{
 		PRINT("connect err[%d][%s]\n",errno, strerror(errno));
 		close(sockfd);
